@@ -9,23 +9,23 @@ const contactForm = document.querySelector(".contact-form");
 const formNote = document.querySelector("[data-form-note]");
 
 const modes = {
-  production: {
-    label: "Production room",
-    status: "8 sources live",
+  overview: {
+    label: "Insight hub",
+    status: "Channel connected",
     copy:
-      "Give directors a fast switching surface with source notes, stream health, and share controls in reach.",
+      "See verified channel momentum, discovery sources, watch time, and the AI signals that shape your next upload plan.",
   },
-  operations: {
-    label: "Operations watch",
-    status: "14 sites online",
+  video: {
+    label: "Video AI",
+    status: "1 upload selected",
     copy:
-      "Monitor distributed teams with location context, feed quality, and escalation notes visible beside the live view.",
+      "Break down a single upload by retention, engagement, search intent, and AI-recommended edits.",
   },
-  briefing: {
-    label: "Briefing room",
-    status: "32 viewers invited",
+  strategy: {
+    label: "AI strategy",
+    status: "3 ideas ranked",
     copy:
-      "Create a polished stakeholder view with curated feeds, controlled chat, and a secure link for fast alignment.",
+      "Ask ViewCast what to make next, when to publish it, and how to package the idea for your audience.",
   },
 };
 
@@ -66,6 +66,6 @@ modeTabs.forEach((tab) => {
 
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  formNote.textContent = "Thanks. Your walkthrough request is ready to connect to a backend.";
+  formNote.textContent = "Thanks. Your early access request is ready to connect to a backend.";
   contactForm.reset();
 });

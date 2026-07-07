@@ -448,7 +448,7 @@ h3 {
   box-shadow: 0 0 0 6px rgba(239, 96, 77, 0.16);
 }
 
-.feed-layout {
+.insight-layout {
   display: grid;
   grid-template-columns: 1.35fr 1fr;
   grid-auto-rows: minmax(92px, 13vw);
@@ -456,35 +456,74 @@ h3 {
   margin: 22px 0;
 }
 
-.feed {
+.insight-card {
   position: relative;
-  display: grid;
-  place-items: end start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 92px;
   padding: 12px;
   border-radius: 8px;
-  color: #fff;
-  background:
-    linear-gradient(140deg, rgba(26, 163, 148, 0.88), rgba(36, 69, 61, 0.78)),
-    url("assets/viewcast-hero.png") center / cover;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid rgba(222, 219, 210, 0.9);
   overflow: hidden;
 }
 
-.feed::after {
+.insight-card::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.32), transparent);
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--line);
 }
 
-.feed span {
+.insight-card i {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal) var(--value), transparent 0);
+  z-index: 1;
+}
+
+.insight-card span,
+.insight-card strong {
   position: relative;
   z-index: 1;
+}
+
+.insight-card span {
+  color: var(--muted);
+  font-size: 0.84rem;
   font-weight: 800;
 }
 
-.feed-large {
+.insight-card strong {
+  margin-top: 18px;
+  font-size: clamp(1.15rem, 2.6vw, 2rem);
+  font-weight: 800;
+}
+
+.insight-card-large {
   grid-row: span 2;
+  color: #fff;
+  background:
+    linear-gradient(140deg, rgba(26, 163, 148, 0.92), rgba(36, 69, 61, 0.9)),
+    url("assets/viewcast-ai-hero.png") center / cover;
+}
+
+.insight-card-large span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.insight-card-large::after {
+  background: rgba(255, 255, 255, 0.24);
 }
 
 .mode-screen p {
@@ -690,7 +729,7 @@ h3 {
     margin-bottom: 30px;
   }
 
-  .feed-layout {
+  .insight-layout {
     grid-auto-rows: minmax(86px, 28vw);
   }
 }
@@ -722,11 +761,11 @@ h3 {
     border-bottom: 0;
   }
 
-  .feed-layout {
+  .insight-layout {
     grid-template-columns: 1fr;
   }
 
-  .feed-large {
+  .insight-card-large {
     grid-row: span 1;
   }
 }
