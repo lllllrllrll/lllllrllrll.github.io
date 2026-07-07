@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViewCast | Live Views, Shared Clearly</title>
+    <meta
+      name="description"
+      content="ViewCast helps teams broadcast, monitor, and share live views with calm control."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="ViewCast home">
+        <span class="brand-mark" aria-hidden="true">VC</span>
+        <span>ViewCast</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#platform">Platform</a>
+        <a href="#views">Views</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/viewcast-hero.png"
+          alt="A ViewCast broadcast dashboard showing live camera views, map status, controls, and stream chat."
+        />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Live video operations for teams in motion</p>
+          <h1 id="hero-title">ViewCast</h1>
+          <p class="hero-copy">
+            Broadcast every critical view, monitor signal health, and give the right people a
+            shared operating picture without burying them in feeds.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#contact">Book a walkthrough</a>
+            <a class="button button-secondary" href="#platform">Explore platform</a>
+          </div>
+          <dl class="hero-metrics" aria-label="ViewCast platform highlights">
+            <div>
+              <dt>4K</dt>
+              <dd>live sources</dd>
+            </div>
+            <div>
+              <dt>24/7</dt>
+              <dd>monitoring</dd>
+            </div>
+            <div>
+              <dt>1 sec</dt>
+              <dd>status checks</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="signal-band" aria-label="Realtime stream status">
+        <div class="ticker">
+          <span>Signal stable</span>
+          <span>Director view online</span>
+          <span>Field camera synced</span>
+          <span>Guest link ready</span>
+          <span>Archive recording</span>
+        </div>
+      </section>
+
+      <section class="section platform" id="platform" aria-labelledby="platform-title">
+        <div class="section-heading">
+          <p class="eyebrow">Platform</p>
+          <h2 id="platform-title">Built for the moment when every angle matters.</h2>
+          <p>
+            ViewCast turns scattered video streams into a coordinated workspace for producers,
+            operations teams, and stakeholders watching from anywhere.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">01</span>
+            <h3>Live view command</h3>
+            <p>
+              Pin, group, and prioritize feeds so teams can follow what matters without losing
+              context.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">02</span>
+            <h3>Signal confidence</h3>
+            <p>
+              Track source quality, latency, battery, and location health before issues reach the
+              broadcast.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">03</span>
+            <h3>Shared rooms</h3>
+            <p>
+              Invite executives, clients, or field teams into curated viewing spaces with the right
+              permissions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section views" id="views" aria-labelledby="views-title">
+        <div class="view-copy">
+          <p class="eyebrow">Views</p>
+          <h2 id="views-title">One broadcast center for every audience.</h2>
+          <p>
+            Switch between operating modes without opening another tool. Each ViewCast space keeps
+            video, chat, locations, and controls in one clear place.
+          </p>
+        </div>
+
+        <div class="mode-panel">
+          <div class="mode-tabs" role="tablist" aria-label="ViewCast modes">
+            <button class="mode-tab is-active" type="button" role="tab" aria-selected="true" data-mode="production">
+              Production
+            </button>
+            <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="operations">
+              Operations
+            </button>
+            <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="briefing">
+              Briefing
+            </button>
+          </div>
+          <div class="mode-screen" aria-live="polite">
+            <div class="screen-top">
+              <span class="live-dot"></span>
+              <span id="mode-label">Production room</span>
+              <strong id="mode-status">8 sources live</strong>
+            </div>
+            <div class="feed-layout" id="feed-layout">
+              <div class="feed feed-large">
+                <span>Main</span>
+              </div>
+              <div class="feed">
+                <span>Cam A</span>
+              </div>
+              <div class="feed">
+                <span>Cam B</span>
+              </div>
+              <div class="feed">
+                <span>Guest</span>
+              </div>
+            </div>
+            <p id="mode-copy">
+              Give directors a fast switching surface with source notes, stream health, and share
+              controls in reach.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+        <div class="workflow-inner">
+          <div>
+            <p class="eyebrow">Workflow</p>
+            <h2 id="workflow-title">From first camera to final share link.</h2>
+          </div>
+          <ol class="timeline">
+            <li>
+              <strong>Connect</strong>
+              Bring in fixed cameras, mobile feeds, drones, remote guests, or RTMP sources.
+            </li>
+            <li>
+              <strong>Coordinate</strong>
+              Route views into rooms, assign roles, and keep decisions next to the live picture.
+            </li>
+            <li>
+              <strong>Cast</strong>
+              Publish secure links, record automatically, and keep every stakeholder aligned.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="eyebrow">Get started</p>
+          <h2 id="contact-title">Show ViewCast where your team watches from.</h2>
+          <p>
+            Tell us what you need to monitor and we will map a live-view workspace around your
+            sources, roles, and sharing rules.
+          </p>
+        </div>
+        <form class="contact-form" aria-label="ViewCast walkthrough request">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" placeholder="Alex Morgan" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" placeholder="alex@company.com" />
+          </label>
+          <label>
+            What do you want to viewcast?
+            <textarea name="message" rows="4" placeholder="Events, job sites, city feeds, field operations..."></textarea>
+          </label>
+          <button class="button button-primary" type="submit">Request walkthrough</button>
+          <p class="form-note" data-form-note aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>ViewCast</span>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
