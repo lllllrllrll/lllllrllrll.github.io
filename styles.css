@@ -135,7 +135,7 @@ textarea {
 
 .hero {
   position: relative;
-  min-height: 82vh;
+  min-height: 84vh;
   display: grid;
   align-items: end;
   overflow: hidden;
@@ -154,20 +154,30 @@ textarea {
 .hero-image {
   z-index: -2;
   object-fit: cover;
-  object-position: center top;
-  filter: saturate(0.98);
+  object-position: 58% center;
+  filter: saturate(0.88) brightness(0.68);
 }
 
 .hero-shade {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(12, 13, 11, 0.82) 0%, rgba(12, 13, 11, 0.54) 38%, rgba(12, 13, 11, 0.16) 72%),
-    linear-gradient(0deg, rgba(12, 13, 11, 0.78) 0%, rgba(12, 13, 11, 0.02) 52%);
+    linear-gradient(90deg, rgba(12, 13, 11, 0.92) 0%, rgba(12, 13, 11, 0.68) 44%, rgba(12, 13, 11, 0.44) 100%),
+    linear-gradient(0deg, rgba(12, 13, 11, 0.84) 0%, rgba(12, 13, 11, 0.1) 62%);
+}
+
+.hero-inner {
+  width: min(1480px, calc(100% - clamp(36px, 7vw, 120px)));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 0.92fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: end;
+  padding: 112px 0 56px;
 }
 
 .hero-content {
-  width: min(900px, calc(100% - 36px));
-  padding: 112px 0 54px clamp(18px, 5vw, 64px);
+  min-width: 0;
+  max-width: 680px;
 }
 
 .eyebrow {
@@ -273,6 +283,32 @@ h3 {
   margin: 2px 0 0;
   color: rgba(255, 255, 255, 0.76);
   font-size: 0.9rem;
+}
+
+.hero-product {
+  margin: 0 0 8px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(16, 24, 32, 0.76);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(10px);
+}
+
+.hero-product img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #101820;
+}
+
+.hero-product figcaption {
+  margin-top: 9px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .signal-band {
@@ -704,9 +740,18 @@ h3 {
     object-position: 59% center;
   }
 
+  .hero-inner {
+    width: calc(100% - 36px);
+    grid-template-columns: 1fr;
+    padding: 96px 0 42px;
+  }
+
   .hero-content {
-    width: 100%;
-    padding: 96px 18px 42px;
+    max-width: none;
+  }
+
+  .hero-product {
+    display: none;
   }
 
   .hero-metrics,

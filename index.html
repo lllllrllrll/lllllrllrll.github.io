@@ -10,7 +10,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="assets/viewcast-ai-hero-viewcast.png" />
+    <link rel="preload" as="image" href="assets/viewcast-ai-hero.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -41,38 +41,49 @@
       <section class="hero" aria-labelledby="hero-title">
         <img
           class="hero-image"
-          src="assets/viewcast-ai-hero-viewcast.png"
-          alt="A ViewCast creator analytics dashboard with placeholder channel overview data on a studio monitor."
-          data-fallback="ViewCast placeholder overview hero image"
+          src="assets/viewcast-ai-hero.png"
+          alt="A ViewCast AI creator analytics dashboard on a studio monitor."
+          data-fallback="ViewCast AI hero image"
           fetchpriority="high"
           decoding="async"
         />
         <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Showcase for the ViewCast web app</p>
-          <h1 id="hero-title">ViewCast</h1>
-          <p class="hero-copy">
-            A creator analytics dashboard for people who link their YouTube channel and want AI to
-            explain what is working, what is slowing growth, and what to publish next.
-          </p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="#views">View app screens</a>
-            <a class="button button-secondary" href="#platform">See placeholder data</a>
+        <div class="hero-inner">
+          <div class="hero-content">
+            <p class="eyebrow">Showcase for the ViewCast web app</p>
+            <h1 id="hero-title">ViewCast</h1>
+            <p class="hero-copy">
+              A creator analytics dashboard for people who link their YouTube channel and want AI to
+              explain what is working, what is slowing growth, and what to publish next.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button button-primary" href="#views">View app screens</a>
+              <a class="button button-secondary" href="#platform">See placeholder data</a>
+            </div>
+            <dl class="hero-metrics" aria-label="ViewCast platform highlights">
+              <div>
+                <dt>128K</dt>
+                <dd>28-day views</dd>
+              </div>
+              <div>
+                <dt>5:42</dt>
+                <dd>avg. view duration</dd>
+              </div>
+              <div>
+                <dt>+2.1K</dt>
+                <dd>subscribers gained</dd>
+              </div>
+            </dl>
           </div>
-          <dl class="hero-metrics" aria-label="ViewCast platform highlights">
-            <div>
-              <dt>128K</dt>
-              <dd>28-day views</dd>
-            </div>
-            <div>
-              <dt>5:42</dt>
-              <dd>avg. view duration</dd>
-            </div>
-            <div>
-              <dt>+2.1K</dt>
-              <dd>subscribers gained</dd>
-            </div>
-          </dl>
+          <figure class="hero-product">
+            <img
+              src="assets/viewcast-overview-web.jpg"
+              alt="ViewCast overview dashboard with placeholder creator analytics."
+              loading="eager"
+              decoding="async"
+            />
+            <figcaption>Overview with placeholder channel data</figcaption>
+          </figure>
         </div>
       </section>
 
