@@ -9,6 +9,7 @@ const modeShot = document.querySelector("#mode-shot");
 const modeStats = document.querySelector("#mode-stats");
 const contactForm = document.querySelector(".contact-form");
 const formNote = document.querySelector("[data-form-note]");
+const imageFallbacks = document.querySelectorAll("img[data-fallback]");
 
 const modes = {
   overview: {
@@ -56,6 +57,29 @@ const updateHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 };
 
+const applyImageFallback = (image) => {
+  const fallbackText = image.dataset.fallback || "Image unavailable";
+  const wrapper = image.closest(".app-shot-wrap");
+
+  if (wrapper) {
+    wrapper.dataset.fallback = fallbackText;
+    wrapper.classList.add("is-missing");
+    return;
+  }
+
+  const hero = image.closest(".hero");
+  if (hero) {
+    hero.classList.add("has-missing-image");
+  }
+};
+
+imageFallbacks.forEach((image) => {
+  image.addEventListener("error", () => applyImageFallback(image));
+  if (image.complete && image.naturalWidth === 0) {
+    applyImageFallback(image);
+  }
+});
+
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 
@@ -83,8 +107,10 @@ modeTabs.forEach((tab) => {
 
     modeLabel.textContent = mode.label;
     modeStatus.textContent = mode.status;
+    modeShot.closest(".app-shot-wrap")?.classList.remove("is-missing");
     modeShot.src = mode.image;
     modeShot.alt = mode.alt;
+    modeShot.dataset.fallback = mode.alt;
     modeStats.innerHTML = mode.stats
       .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
       .join("");
