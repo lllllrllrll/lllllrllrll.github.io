@@ -1,3 +1,11 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("pageshow", () => {
+  requestAnimationFrame(() => window.scrollTo(0, 0));
+});
+
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
