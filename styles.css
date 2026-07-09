@@ -500,6 +500,7 @@ h3 {
 }
 
 .app-shot {
+  display: none;
   width: 100%;
   max-height: 520px;
   aspect-ratio: 16 / 8;
@@ -508,6 +509,10 @@ h3 {
   object-position: top left;
   background: #101820;
   box-shadow: 0 12px 34px rgba(16, 24, 32, 0.22);
+}
+
+.app-shot.is-active {
+  display: block;
 }
 
 .app-shot-wrap.is-missing {
@@ -523,7 +528,7 @@ h3 {
   content: attr(data-fallback);
 }
 
-.app-shot-wrap.is-missing .app-shot,
+.app-shot-wrap.is-missing .app-shot.is-active,
 .hero.has-missing-image .hero-image {
   display: none;
 }

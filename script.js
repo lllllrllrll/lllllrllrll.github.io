@@ -13,7 +13,7 @@ const modeTabs = document.querySelectorAll(".mode-tab");
 const modeLabel = document.querySelector("#mode-label");
 const modeStatus = document.querySelector("#mode-status");
 const modeCopy = document.querySelector("#mode-copy");
-const modeShot = document.querySelector("#mode-shot");
+const modeShots = document.querySelectorAll("[data-shot]");
 const modeStats = document.querySelector("#mode-stats");
 const contactForm = document.querySelector(".contact-form");
 const formNote = document.querySelector("[data-form-note]");
@@ -23,8 +23,6 @@ const modes = {
   overview: {
     label: "Creator Analytics",
     status: "128.4K views",
-    image: "assets/viewcast-overview-web.jpg",
-    alt: "ViewCast overview dashboard screenshot with placeholder creator analytics.",
     stats: [
       ["28-day views", "128.4K"],
       ["Watch hours", "9.8K"],
@@ -36,8 +34,6 @@ const modes = {
   video: {
     label: "Video Analyzer",
     status: "4 uploads ready",
-    image: "assets/viewcast-video-analyzer-web.jpg",
-    alt: "ViewCast Video Analyzer screenshot showing saved YouTube uploads.",
     stats: [
       ["Sample URL", "Ready"],
       ["Uploads loaded", "4"],
@@ -49,8 +45,6 @@ const modes = {
   channel: {
     label: "My Channel",
     status: "Connected profile",
-    image: "assets/viewcast-channel-web.jpg",
-    alt: "ViewCast My Channel screenshot showing saved YouTube data and channel metrics.",
     stats: [
       ["Total subs", "42.8K"],
       ["Total views", "1.9M"],
@@ -89,9 +83,9 @@ imageFallbacks.forEach((image) => {
 });
 
 const preloadModeImages = () => {
-  Object.values(modes).forEach((mode) => {
+  modeShots.forEach((shot) => {
     const image = new Image();
-    image.src = mode.image;
+    image.src = shot.currentSrc || shot.src;
   });
 };
 
@@ -128,10 +122,10 @@ modeTabs.forEach((tab) => {
 
     modeLabel.textContent = mode.label;
     modeStatus.textContent = mode.status;
-    modeShot.closest(".app-shot-wrap")?.classList.remove("is-missing");
-    modeShot.src = mode.image;
-    modeShot.alt = mode.alt;
-    modeShot.dataset.fallback = mode.alt;
+    modeShots.forEach((shot) => {
+      shot.classList.toggle("is-active", shot.dataset.shot === tab.dataset.mode);
+      shot.closest(".app-shot-wrap")?.classList.remove("is-missing");
+    });
     modeStats.innerHTML = mode.stats
       .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
       .join("");
