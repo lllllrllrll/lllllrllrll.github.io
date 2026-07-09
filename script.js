@@ -5,27 +5,50 @@ const modeTabs = document.querySelectorAll(".mode-tab");
 const modeLabel = document.querySelector("#mode-label");
 const modeStatus = document.querySelector("#mode-status");
 const modeCopy = document.querySelector("#mode-copy");
+const modeShot = document.querySelector("#mode-shot");
+const modeStats = document.querySelector("#mode-stats");
 const contactForm = document.querySelector(".contact-form");
 const formNote = document.querySelector("[data-form-note]");
 
 const modes = {
   overview: {
-    label: "Insight hub",
-    status: "Channel connected",
+    label: "Creator Analytics",
+    status: "128.4K views",
+    image: "assets/viewcast-overview.png",
+    alt: "ViewCast overview dashboard screenshot with placeholder creator analytics.",
+    stats: [
+      ["28-day views", "128.4K"],
+      ["Watch hours", "9.8K"],
+      ["Next move", "Improve intros"],
+    ],
     copy:
-      "See verified channel momentum, discovery sources, watch time, and the AI signals that shape your next upload plan.",
+      "The overview introduces the command center, 28-day health, traffic sources, and video opportunity placeholders before a channel is fully populated.",
   },
   video: {
-    label: "Video AI",
-    status: "1 upload selected",
+    label: "Video Analyzer",
+    status: "4 uploads ready",
+    image: "assets/viewcast-video-analyzer.png",
+    alt: "ViewCast Video Analyzer screenshot with upload list placeholder state.",
+    stats: [
+      ["Sample URL", "Ready"],
+      ["Uploads loaded", "4"],
+      ["AI edits", "7 ideas"],
+    ],
     copy:
-      "Break down a single upload by retention, engagement, search intent, and AI-recommended edits.",
+      "The analyzer screen is ready for pasted video URLs or refreshed linked uploads, then can show retention, pacing, and AI edit recommendations.",
   },
-  strategy: {
-    label: "AI strategy",
-    status: "3 ideas ranked",
+  channel: {
+    label: "My Channel",
+    status: "Connected profile",
+    image: "assets/viewcast-channel.png",
+    alt: "ViewCast My Channel screenshot showing YouTube connection and channel profile panels.",
+    stats: [
+      ["Total subs", "42.8K"],
+      ["Total views", "1.9M"],
+      ["Videos", "186"],
+    ],
     copy:
-      "Ask ViewCast what to make next, when to publish it, and how to package the idea for your audience.",
+      "The channel page shows the YouTube connection, account identity, subscriber trend, upload frequency, and core channel health placeholders.",
   },
 };
 
@@ -60,12 +83,17 @@ modeTabs.forEach((tab) => {
 
     modeLabel.textContent = mode.label;
     modeStatus.textContent = mode.status;
+    modeShot.src = mode.image;
+    modeShot.alt = mode.alt;
+    modeStats.innerHTML = mode.stats
+      .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
+      .join("");
     modeCopy.textContent = mode.copy;
   });
 });
 
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  formNote.textContent = "Thanks. Your early access request is ready to connect to a backend.";
+  formNote.textContent = "Thanks. Your demo request is ready to connect to a backend.";
   contactForm.reset();
 });

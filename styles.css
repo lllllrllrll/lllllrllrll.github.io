@@ -154,7 +154,8 @@ textarea {
 .hero-image {
   z-index: -2;
   object-fit: cover;
-  object-position: 53% center;
+  object-position: 60% center;
+  filter: saturate(0.98);
 }
 
 .hero-shade {
@@ -380,6 +381,10 @@ h3 {
   color: var(--muted);
 }
 
+.feature-card strong {
+  color: var(--ink);
+}
+
 .views {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
@@ -448,82 +453,50 @@ h3 {
   box-shadow: 0 0 0 6px rgba(239, 96, 77, 0.16);
 }
 
-.insight-layout {
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  grid-auto-rows: minmax(92px, 13vw);
-  gap: 10px;
-  margin: 22px 0;
-}
-
-.insight-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 92px;
-  padding: 12px;
+.app-shot-wrap {
+  margin: 22px 0 16px;
+  padding: 10px;
+  border: 1px solid rgba(34, 36, 38, 0.14);
   border-radius: 8px;
-  color: var(--ink);
-  background: #fff;
-  border: 1px solid rgba(222, 219, 210, 0.9);
+  background: #101820;
   overflow: hidden;
 }
 
-.insight-card::after {
-  content: "";
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--line);
+.app-shot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: top left;
+  box-shadow: 0 18px 55px rgba(16, 24, 32, 0.25);
 }
 
-.insight-card i {
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  height: 5px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--teal) var(--value), transparent 0);
-  z-index: 1;
+.placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 18px;
 }
 
-.insight-card span,
-.insight-card strong {
-  position: relative;
-  z-index: 1;
+.placeholder-grid div {
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
 }
 
-.insight-card span {
+.placeholder-grid dt {
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 800;
 }
 
-.insight-card strong {
-  margin-top: 18px;
-  font-size: clamp(1.15rem, 2.6vw, 2rem);
+.placeholder-grid dd {
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
   font-weight: 800;
-}
-
-.insight-card-large {
-  grid-row: span 2;
-  color: #fff;
-  background:
-    linear-gradient(140deg, rgba(26, 163, 148, 0.92), rgba(36, 69, 61, 0.9)),
-    url("assets/viewcast-ai-hero.png") center / cover;
-}
-
-.insight-card-large span {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.insight-card-large::after {
-  background: rgba(255, 255, 255, 0.24);
 }
 
 .mode-screen p {
@@ -729,8 +702,8 @@ h3 {
     margin-bottom: 30px;
   }
 
-  .insight-layout {
-    grid-auto-rows: minmax(86px, 28vw);
+  .placeholder-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -761,11 +734,7 @@ h3 {
     border-bottom: 0;
   }
 
-  .insight-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .insight-card-large {
-    grid-row: span 1;
+  .app-shot-wrap {
+    padding: 6px;
   }
 }

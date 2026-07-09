@@ -29,10 +29,10 @@
         <span class="sr-only">Menu</span>
       </button>
       <nav class="site-nav" id="site-nav">
-        <a href="#platform">Insights</a>
-        <a href="#views">Dashboard</a>
+        <a href="#platform">Product</a>
+        <a href="#views">Screens</a>
         <a href="#workflow">Workflow</a>
-        <a href="#contact">Early access</a>
+        <a href="#contact">Demo</a>
       </nav>
     </header>
 
@@ -40,33 +40,33 @@
       <section class="hero" aria-labelledby="hero-title">
         <img
           class="hero-image"
-          src="assets/viewcast-ai-hero.png"
-          alt="A ViewCast AI dashboard showing creator analytics, retention charts, upload timing, and next video recommendations."
+          src="assets/viewcast-overview.png"
+          alt="The ViewCast creator analytics overview dashboard with channel metrics and placeholder data."
         />
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="eyebrow">AI insight studio for YouTube creators</p>
+          <p class="eyebrow">Showcase for the ViewCast web app</p>
           <h1 id="hero-title">ViewCast</h1>
           <p class="hero-copy">
-            Link your YouTube channel, let ViewCast read the signals behind your uploads, and get
-            clear AI recommendations for what to make, when to publish, and how to grow.
+            A creator analytics dashboard for people who link their YouTube channel and want AI to
+            explain what is working, what is slowing growth, and what to publish next.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="#contact">Join early access</a>
-            <a class="button button-secondary" href="#platform">Explore insights</a>
+            <a class="button button-primary" href="#views">View app screens</a>
+            <a class="button button-secondary" href="#platform">See placeholder data</a>
           </div>
           <dl class="hero-metrics" aria-label="ViewCast platform highlights">
             <div>
-              <dt>28D</dt>
-              <dd>channel signal</dd>
+              <dt>128K</dt>
+              <dd>28-day views</dd>
             </div>
             <div>
-              <dt>AI</dt>
-              <dd>strategy briefs</dd>
+              <dt>5:42</dt>
+              <dd>avg. view duration</dd>
             </div>
             <div>
-              <dt>Next</dt>
-              <dd>upload plan</dd>
+              <dt>+2.1K</dt>
+              <dd>subscribers gained</dd>
             </div>
           </dl>
         </div>
@@ -75,46 +75,46 @@
       <section class="signal-band" aria-label="Creator insight signals">
         <div class="ticker">
           <span>YouTube channel linked</span>
-          <span>Retention gaps found</span>
-          <span>Best upload window ready</span>
-          <span>Topic ideas ranked</span>
-          <span>Next video brief generated</span>
+          <span>Overview populated with placeholder metrics</span>
+          <span>Video Analyzer ready for upload URLs</span>
+          <span>My Channel profile synced</span>
+          <span>AI Insights queued for recommendations</span>
         </div>
       </section>
 
       <section class="section platform" id="platform" aria-labelledby="platform-title">
         <div class="section-heading">
-          <p class="eyebrow">Insights</p>
-          <h2 id="platform-title">Connect your channel. Know what to do next.</h2>
+          <p class="eyebrow">Product</p>
+          <h2 id="platform-title">A showcase of the actual ViewCast dashboard.</h2>
           <p>
-            ViewCast turns YouTube analytics into creator-friendly AI guidance, so every upload
-            decision starts with real audience data instead of guesswork.
+            The site now uses your app screenshots and sample data to present ViewCast as a real
+            creator workspace, from channel linking to video-level analysis.
           </p>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card">
             <span class="feature-icon" aria-hidden="true">01</span>
-            <h3>Channel link</h3>
+            <h3>Overview dashboard</h3>
             <p>
-              Connect YouTube once and bring views, watch time, subscribers, uploads, and channel
-              history into one clear workspace.
+              Placeholder totals show <strong>128,400 views</strong>, <strong>9,820 watch
+              hours</strong>, and <strong>2,140 new subscribers</strong> across the last 28 days.
             </p>
           </article>
           <article class="feature-card">
             <span class="feature-icon" aria-hidden="true">02</span>
-            <h3>AI diagnosis</h3>
+            <h3>Video Analyzer</h3>
             <p>
-              Spot retention drop-offs, topic patterns, format strengths, search signals, and
-              audience behavior that deserve attention.
+              A creator can paste a YouTube URL or refresh linked uploads, then ViewCast can show
+              retention, pacing, search terms, and AI improvement ideas.
             </p>
           </article>
           <article class="feature-card">
             <span class="feature-icon" aria-hidden="true">03</span>
-            <h3>Action plan</h3>
+            <h3>My Channel</h3>
             <p>
-              Get practical recommendations for your next video idea, upload timing, title angle,
-              Shorts strategy, and improvement list.
+              The connection screen explains the channel profile, subscriber trend, upload cadence,
+              and the YouTube account used for AI insights.
             </p>
           </article>
         </div>
@@ -122,11 +122,11 @@
 
       <section class="section views" id="views" aria-labelledby="views-title">
         <div class="view-copy">
-          <p class="eyebrow">Dashboard</p>
-          <h2 id="views-title">A creator command center inspired by your channel.</h2>
+          <p class="eyebrow">Screens</p>
+          <h2 id="views-title">Three core app views with sample creator data.</h2>
           <p>
-            Move between the core views creators expect: a channel overview, video-level analysis,
-            and AI strategy that explains the next best move.
+            These screenshots show the real layout and navigation of the ViewCast app, with
+            placeholder data used to demonstrate what a connected creator account will see.
           </p>
         </div>
 
@@ -136,40 +136,43 @@
               Overview
             </button>
             <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="video">
-              Video AI
+              Video Analyzer
             </button>
-            <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="strategy">
-              Strategy
+            <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="channel">
+              My Channel
             </button>
           </div>
           <div class="mode-screen" aria-live="polite">
             <div class="screen-top">
               <span class="live-dot"></span>
-              <span id="mode-label">Insight hub</span>
-              <strong id="mode-status">Channel connected</strong>
+              <span id="mode-label">Creator Analytics</span>
+              <strong id="mode-status">128.4K views</strong>
             </div>
-            <div class="insight-layout" id="insight-layout">
-              <div class="insight-card insight-card-large">
-                <span>28-day views</span>
-                <strong>128K</strong>
-                <i style="--value: 74%"></i>
-              </div>
-              <div class="insight-card">
-                <span>Best time</span>
-                <strong>Thu 6 PM</strong>
-              </div>
-              <div class="insight-card">
-                <span>Retention risk</span>
-                <strong>0:42 hook</strong>
-              </div>
-              <div class="insight-card">
-                <span>Next topic</span>
-                <strong>Trend fit</strong>
-              </div>
+            <div class="app-shot-wrap">
+              <img
+                class="app-shot"
+                id="mode-shot"
+                src="assets/viewcast-overview.png"
+                alt="ViewCast overview dashboard screenshot with placeholder creator analytics."
+              />
             </div>
+            <dl class="placeholder-grid" id="mode-stats">
+              <div>
+                <dt>28-day views</dt>
+                <dd>128.4K</dd>
+              </div>
+              <div>
+                <dt>Watch hours</dt>
+                <dd>9.8K</dd>
+              </div>
+              <div>
+                <dt>Next move</dt>
+                <dd>Improve intros</dd>
+              </div>
+            </dl>
             <p id="mode-copy">
-              See verified channel momentum, discovery sources, watch time, and the AI signals that
-              shape your next upload plan.
+              The overview introduces the command center, 28-day health, traffic sources, and video
+              opportunity placeholders before a channel is fully populated.
             </p>
           </div>
         </div>
@@ -179,20 +182,22 @@
         <div class="workflow-inner">
           <div>
             <p class="eyebrow">Workflow</p>
-            <h2 id="workflow-title">From YouTube link to next upload brief.</h2>
+            <h2 id="workflow-title">From channel connection to creator recommendations.</h2>
           </div>
           <ol class="timeline">
             <li>
               <strong>Link</strong>
-              Connect the YouTube channel you want ViewCast to analyze.
+              Use My Channel to connect YouTube and prepare the creator profile.
             </li>
             <li>
-              <strong>Analyze</strong>
-              Read performance, retention, upload cadence, discovery, and audience signals.
+              <strong>Populate</strong>
+              Fill the overview with placeholder or synced views, watch time, subscriber, and
+              traffic-source metrics.
             </li>
             <li>
               <strong>Plan</strong>
-              Turn the data into topic ideas, timing recommendations, and a focused creator brief.
+              Use Video Analyzer and AI Insights to turn the dashboard into recommended edits and
+              next-upload ideas.
             </li>
           </ol>
         </div>
@@ -200,11 +205,11 @@
 
       <section class="section contact" id="contact" aria-labelledby="contact-title">
         <div class="contact-copy">
-          <p class="eyebrow">Early access</p>
-          <h2 id="contact-title">Bring your YouTube channel to ViewCast.</h2>
+          <p class="eyebrow">Demo</p>
+          <h2 id="contact-title">Show the ViewCast dashboard with your creator niche.</h2>
           <p>
-            Tell us what kind of creator you are and we will shape ViewCast around the insights you
-            need before your next upload.
+            Use this form as a placeholder lead capture for creators who want to link YouTube and
+            preview AI-powered channel recommendations.
           </p>
         </div>
         <form class="contact-form" aria-label="ViewCast early access request">
@@ -220,7 +225,7 @@
             YouTube channel or creator niche
             <textarea name="message" rows="4" placeholder="Gaming, education, fitness, music, commentary..."></textarea>
           </label>
-          <button class="button button-primary" type="submit">Request early access</button>
+          <button class="button button-primary" type="submit">Request demo</button>
           <p class="form-note" data-form-note aria-live="polite"></p>
         </form>
       </section>
