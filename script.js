@@ -15,8 +15,8 @@ const modes = {
   overview: {
     label: "Creator Analytics",
     status: "128.4K views",
-    image: "assets/viewcast-channel-live.png",
-    alt: "ViewCast channel dashboard screenshot with saved YouTube metrics.",
+    image: "assets/viewcast-overview-web.jpg",
+    alt: "ViewCast overview dashboard screenshot with placeholder creator analytics.",
     stats: [
       ["28-day views", "128.4K"],
       ["Watch hours", "9.8K"],
@@ -28,7 +28,7 @@ const modes = {
   video: {
     label: "Video Analyzer",
     status: "4 uploads ready",
-    image: "assets/viewcast-video-analyzer-live.png",
+    image: "assets/viewcast-video-analyzer-web.jpg",
     alt: "ViewCast Video Analyzer screenshot showing saved YouTube uploads.",
     stats: [
       ["Sample URL", "Ready"],
@@ -41,7 +41,7 @@ const modes = {
   channel: {
     label: "My Channel",
     status: "Connected profile",
-    image: "assets/viewcast-channel-live.png",
+    image: "assets/viewcast-channel-web.jpg",
     alt: "ViewCast My Channel screenshot showing saved YouTube data and channel metrics.",
     stats: [
       ["Total subs", "42.8K"],
@@ -79,6 +79,19 @@ imageFallbacks.forEach((image) => {
     applyImageFallback(image);
   }
 });
+
+const preloadModeImages = () => {
+  Object.values(modes).forEach((mode) => {
+    const image = new Image();
+    image.src = mode.image;
+  });
+};
+
+if ("requestIdleCallback" in window) {
+  window.requestIdleCallback(preloadModeImages);
+} else {
+  window.addEventListener("load", preloadModeImages, { once: true });
+}
 
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
