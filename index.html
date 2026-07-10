@@ -33,7 +33,7 @@
         <a href="#platform">Product</a>
         <a href="#views">Screens</a>
         <a href="#workflow">Workflow</a>
-        <a href="#contact">Demo</a>
+        <a href="#contact">Create account</a>
       </nav>
     </header>
 
@@ -241,14 +241,14 @@
 
       <section class="section contact" id="contact" aria-labelledby="contact-title">
         <div class="contact-copy">
-          <p class="eyebrow">Demo</p>
-          <h2 id="contact-title">Show the ViewCast dashboard with your creator niche.</h2>
+          <p class="eyebrow">Create account</p>
+          <h2 id="contact-title">Start your ViewCast creator workspace.</h2>
           <p>
-            Use this form as a placeholder lead capture for creators who want to link YouTube and
-            preview AI-powered channel recommendations.
+            Prompt creators to create an account first, then connect YouTube from the dashboard to
+            populate analytics and AI recommendations.
           </p>
         </div>
-        <form class="contact-form" aria-label="ViewCast early access request">
+        <form class="contact-form" aria-label="Create a ViewCast account">
           <label>
             Name
             <input type="text" name="name" autocomplete="name" placeholder="Alex Morgan" />
@@ -258,10 +258,14 @@
             <input type="email" name="email" autocomplete="email" placeholder="alex@company.com" />
           </label>
           <label>
-            YouTube channel or creator niche
-            <textarea name="message" rows="4" placeholder="Gaming, education, fitness, music, commentary..."></textarea>
+            Password
+            <input type="password" name="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" />
           </label>
-          <button class="button button-primary" type="submit">Request demo</button>
+          <label>
+            YouTube channel or creator niche
+            <input type="text" name="channel" autocomplete="off" placeholder="@channel or Gaming, education, fitness..." />
+          </label>
+          <button class="button button-primary" type="submit">Create account</button>
           <p class="form-note" data-form-note aria-live="polite"></p>
         </form>
       </section>
@@ -272,6 +276,6 @@
       <a href="#top">Back to top</a>
     </footer>
 
-    <script src="script.js?v=20260709-tabs"></script>
+    <script src="script.js"></script>
   </body>
 </html>

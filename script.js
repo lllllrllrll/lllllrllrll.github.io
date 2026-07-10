@@ -9,6 +9,7 @@ window.addEventListener("pageshow", () => {
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
+const modeTabList = document.querySelector(".mode-tabs");
 const modeTabs = document.querySelectorAll(".mode-tab");
 const modeLabel = document.querySelector("#mode-label");
 const modeStatus = document.querySelector("#mode-status");
@@ -110,31 +111,37 @@ nav.addEventListener("click", (event) => {
   }
 });
 
-modeTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const mode = modes[tab.dataset.mode];
+const setMode = (modeId) => {
+  const mode = modes[modeId];
+  if (!mode) return;
 
-    modeTabs.forEach((currentTab) => {
-      const isActive = currentTab === tab;
-      currentTab.classList.toggle("is-active", isActive);
-      currentTab.setAttribute("aria-selected", String(isActive));
-    });
-
-    modeLabel.textContent = mode.label;
-    modeStatus.textContent = mode.status;
-    modeShots.forEach((shot) => {
-      shot.classList.toggle("is-active", shot.dataset.shot === tab.dataset.mode);
-      shot.closest(".app-shot-wrap")?.classList.remove("is-missing");
-    });
-    modeStats.innerHTML = mode.stats
-      .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
-      .join("");
-    modeCopy.textContent = mode.copy;
+  modeTabs.forEach((currentTab) => {
+    const isActive = currentTab.dataset.mode === modeId;
+    currentTab.classList.toggle("is-active", isActive);
+    currentTab.setAttribute("aria-selected", String(isActive));
   });
+
+  modeLabel.textContent = mode.label;
+  modeStatus.textContent = mode.status;
+  modeShots.forEach((shot) => {
+    shot.classList.toggle("is-active", shot.dataset.shot === modeId);
+    shot.closest(".app-shot-wrap")?.classList.remove("is-missing");
+  });
+  modeStats.innerHTML = mode.stats
+    .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
+    .join("");
+  modeCopy.textContent = mode.copy;
+};
+
+modeTabList.addEventListener("click", (event) => {
+  const tab = event.target.closest(".mode-tab");
+  if (!tab) return;
+  event.preventDefault();
+  setMode(tab.dataset.mode);
 });
 
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  formNote.textContent = "Thanks. Your demo request is ready to connect to a backend.";
+  formNote.textContent = "Account creation prompt ready. Next step: connect YouTube inside ViewCast.";
   contactForm.reset();
 });
