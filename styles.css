@@ -581,70 +581,6 @@ h3 {
   color: var(--muted);
 }
 
-.workflow {
-  padding: clamp(54px, 8vw, 88px) clamp(18px, 5vw, 64px);
-  color: #fff;
-  background: var(--forest);
-}
-
-.workflow-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.7fr) minmax(320px, 1fr);
-  gap: clamp(24px, 5vw, 66px);
-}
-
-.workflow .eyebrow {
-  color: #86dfd3;
-}
-
-.timeline {
-  display: grid;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: steps;
-}
-
-.timeline li {
-  position: relative;
-  min-height: 86px;
-  padding: 18px 20px 18px 66px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.timeline li::before {
-  counter-increment: steps;
-  content: counter(steps);
-  position: absolute;
-  left: 20px;
-  top: 18px;
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--ink);
-  background: var(--sun);
-  font-weight: 800;
-}
-
-.timeline strong {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 1.08rem;
-}
-
-.timeline li {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.timeline strong {
-  color: #fff;
-}
-
 .contact {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(320px, 520px);
@@ -803,7 +739,6 @@ h3 {
   .hero-metrics,
   .feature-grid,
   .views,
-  .workflow-inner,
   .contact {
     grid-template-columns: 1fr;
   }
