@@ -16,8 +16,6 @@ const modeStatus = document.querySelector("#mode-status");
 const modeCopy = document.querySelector("#mode-copy");
 const modeShots = document.querySelectorAll("[data-shot]");
 const modeStats = document.querySelector("#mode-stats");
-const contactForm = document.querySelector(".contact-form");
-const formNote = document.querySelector("[data-form-note]");
 const imageFallbacks = document.querySelectorAll("img[data-fallback]");
 
 const modes = {
@@ -138,10 +136,4 @@ modeTabList.addEventListener("click", (event) => {
   if (!tab) return;
   event.preventDefault();
   setMode(tab.dataset.mode);
-});
-
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  formNote.textContent = "Account creation prompt ready. Next step: connect YouTube inside ViewCast.";
-  contactForm.reset();
 });
